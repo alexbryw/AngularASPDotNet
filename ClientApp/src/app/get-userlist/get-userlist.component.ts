@@ -16,8 +16,10 @@ export class GetUserListComponent {
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<User[]>(baseUrl + 'userapi').subscribe(result => {
       this.UserList = result;
+      this.UserList.sort((a, b) => a.UserId - b.UserId);
     }, error => console.error(error));
     // console.log(this.userlist + ' from angular')
+    //sort userlist by userId
   }
 }
 
@@ -25,5 +27,5 @@ export class GetUserListComponent {
 interface User {
   Name: string;
   UserId: number;
-  LastLoginDate: string;
+  LastLogin: string;
 }

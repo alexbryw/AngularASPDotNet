@@ -2,6 +2,8 @@
 <h2 *ngIf="!UserList">Nothing yet...</h2>
 <ul *ngIf="UserList">
     <li *ngFor="let User of UserList">
-        {{ User.Name }}
+        Name: {{ User.Name }} <br>
+        UserId: {{ User.UserId }} <br>
+        Last seen: <br> {{ User.LastLogin.slice(0,19) }}
     </li>
 </ul>
