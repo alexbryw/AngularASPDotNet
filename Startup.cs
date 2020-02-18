@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AngularASPDotNet.Models;
 
 namespace AngularASPDotNet
 {
@@ -25,6 +26,7 @@ namespace AngularASPDotNet
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddTransient<UserList>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
