@@ -17,12 +17,13 @@ export class GetUserListComponent {
     http.get<User[]>(baseUrl + 'userapi').subscribe(result => {
       this.UserList = result;
     }, error => console.error(error));
+    // console.log(this.userlist + ' from angular')
   }
 }
 
-//Interface to match incoming json api data.
+//Interface to match incoming json api data, it's case sensetive.
 interface User {
-  name: string;
-  userId: number;
-  lastLoginDate: string;
+  Name: string;
+  UserId: number;
+  LastLoginDate: string;
 }
