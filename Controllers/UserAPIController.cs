@@ -23,7 +23,6 @@ namespace AngularASPDotNet.Controllers
         [HttpGet]
         public string Get(){
             string userListString = JsonConvert.SerializeObject(userList.getListOfUsers());
-            Console.WriteLine(userListString);
             return userListString;
         }
     }
