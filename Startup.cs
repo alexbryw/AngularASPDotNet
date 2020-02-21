@@ -26,7 +26,8 @@ namespace AngularASPDotNet
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddTransient<UserList>();
+            services.AddTransient<UserList>();  //Loads in UserList once for all to use.
+            services.AddRazorPages(); //for razer pages cshtml.
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +55,7 @@ namespace AngularASPDotNet
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapRazorPages(); //Added for razor pages.
             });
 
             app.UseSpa(spa =>
