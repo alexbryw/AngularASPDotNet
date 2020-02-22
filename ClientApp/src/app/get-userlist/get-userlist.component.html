@@ -1,7 +1,7 @@
-<h1>user list</h1>
+<h2>Angular Userlist from API</h2>
 <h2 *ngIf="!UserList">Nothing yet...</h2>
-<ul *ngIf="UserList">
-    <li *ngFor="let User of UserList">
+<ul class="list-group" *ngIf="UserList">
+    <li class="list-group-item" *ngFor="let User of UserList">
         Name: {{ User.Name }} <br>
         UserId: {{ User.UserId }} <br>
         Last seen: <br> {{ User.LastLogin.slice(0,19) }}

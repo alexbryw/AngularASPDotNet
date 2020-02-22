@@ -3,15 +3,17 @@
 @{
     ViewData["Title"] = "R Page";
 }
-
-<div>
-    <h1>R Page Test</h1>
-    <ul>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="m-2">
+    <h1 class="text-center">ASP.NET Core Razor Page</h1>
+    <ul class="list-group">
         @for (int i = 0; i < Model.ListOfUsers.Count; i++)
         {
-            <li>@Model.ListOfUsers[i].Name</li>
-            <li>@Model.ListOfUsers[i].UserId</li>
-            <li>@Model.ListOfUsers[i].LastLogin</li>
+            <li class="list-group-item">
+                Name: @Model.ListOfUsers[i].Name <br>
+                UserId: @Model.ListOfUsers[i].UserId <br>
+                Last seen:<br>@Model.ListOfUsers[i].LastLogin
+            </li>
         }
     </ul>
 </div>
